@@ -45,6 +45,9 @@ img:not(.nav-logo) {
   width: 100%;
   display: block;
 }
+ul li {
+  list-style-type: none;
+}
 h1,
 h2,
 h3,
@@ -130,7 +133,7 @@ p {
   padding: 1rem;
   display: grid; /*Esto pondra la PARENT en el center*/
   align-items: center;
-  transition: var(--mainTransition); /*porque luego sera fixed*/
+  transition: all 1.5s linear; /*porque luego sera fixed*/
 }
 .nav-center {
   /*Ponemos el Nav center, siempre en el center, bigger screen too*/
@@ -189,6 +192,97 @@ p {
     /* Sucede que el BTN aunque invisible ocupa un espacio, hay que ponerle AUTO al header */
   }
 }
-/* Sidebar for mobile */
-
+/* Fixed Navbar */
+/* Ya tenemos el code JS */
+.navbar-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--offWhite);
+  z-index: 2;
+  box-shadow: var(--darkGrey);
+}
+/* Podemos agregar una Hero section de 150vh para comprobar */
+/* End Fixed Navbar */
 /* End Nav Bar */
+
+/* Sidebar for Mobile */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--colorPrimare-Shade4);
+  /* Hasta aqui ponemos la barra para verla al 100% y trabajarla*/
+  z-index: 4;
+  /* Centramos todos los elementos, para eso teniamos la DIV Parent */
+  display: grid;
+  /* align-items: center; /*vert*/
+  /* justify-content: center; hor */
+  /* para reemplazar align y justify tenemos: Place-Items: Center */
+  place-items: center;
+  transition: var(--mainTransition);
+  /* add later para mantenerla escondida */
+  transform: translateX(-100%);
+}
+/* CLASE CON JS PARA MOSTRAR */
+.show-sidebar {
+  transform: translateX(0);
+}
+/* END CLASE JS */
+.sidebar-links {
+  text-align: center;
+}
+.sidebar-links a {
+  font-size: 2rem;
+  text-transform: capitalize;
+  transition: var(--mainTransition);
+  color: var(--colorPrimare-Shade2);
+  letter-spacing: var(--mainSpacing);
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+.sidebar-links a:hover {
+  color: var(--colorPrimare-Light4);
+}
+/* Social Icons */
+.social-icons {
+  display: grid;
+  margin-top: 3rem;
+  width: 20rem;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+}
+.social-icon {
+  font-size: 2rem;
+  color: var(--colorPrimare-Shade1);
+  transition: var(--mainTransition);
+}
+.social-icon:hover {
+  color: var(--colorPrimare-Light4);
+}
+.close-btn {
+  position: absolute; /*absolute al DIV*/
+  top: 1rem;
+  right: 1rem;
+  font-size: 3rem;
+  background: transparent;
+  border: none;
+  transition: var(--mainTransition);
+  color: var(--DetailCTA1);
+  cursor: pointer;
+}
+.close-btn:hover {
+  color: var(--DetailCTA2);
+  border: none;
+}
+/* End Sidebar for Mobile */
+
+/* Hero Section  */
+.hero {
+  background: red;
+  min-height: 500vh;
+}
+/* End Hero Section */
