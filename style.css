@@ -1,0 +1,81 @@
+/* Variables */
+:root {
+  /* Dark Shades of Primary */
+  --colorPrimare-Shade1: #10423d;
+  --colorPrimare-Shade2: #17635c;
+  --colorPrimare-Shade3: #1f847a;
+  --colorPrimare-Shade4: #27a599;
+  /* Primary */
+  --primaryColor: #2ec4b6;
+  /* Lighter Shades of Primary */
+  --colorPrimare-Light1: #49d4c6;
+  --colorPrimare-Light2: #6adcd1;
+  --colorPrimare-Light3: #8be4db;
+  --colorPrimare-Light4: #acece5;
+  /* Details Colors */
+  --DetailCTA1: #e71d36;
+  --DetailCTA2: #ff9f1c;
+  /* Dark */
+  --mainBlack: #222;
+  --offBlack: #011627;
+  --mainWhite: #fff;
+  --offWhite: #fdfffc;
+  --darkGrey: #747474;
+  /* Others */
+  --mainTransition: all 0.3s linear;
+  --mainSpacing: 0.2rem;
+}
+/* Globals */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  color: var(--mainBlack);
+  background: var(--mainWhite);
+  line-height: 1.5;
+}
+a {
+  text-decoration: none;
+}
+img {
+  width: 100%;
+  display: block;
+}
+h1,
+h2,
+h3 {
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+  margin-bottom: 1.25rem;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  margin-bottom: 0;
+}
+p {
+  font-weight: 300;
+  font-size: 0.7rem;
+  line-height: 2;
+}
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  text-transform: capitalize;
+  border: 3px solid var(--primaryColor);
+  color: var(--primaryColor);
+  margin: 3rem;
+  transition: var(--mainTransition);
+}
+.btn:hover {
+  background: var(--primaryColor);
+  color: var(--mainWhite);
+}
+
+/* Global for Project*/
+
+/* End Globals for project */
