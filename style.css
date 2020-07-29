@@ -103,7 +103,7 @@ p {
   font-size: 0.875rem;
   border: 2px solid transparent;
   cursor: pointer;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   border-radius: var(--borderRad);
 }
 
@@ -133,7 +133,7 @@ p {
   padding: 1rem;
   display: grid; /*Esto pondra la PARENT en el center*/
   align-items: center;
-  transition: all 1.5s linear; /*porque luego sera fixed*/
+  transition: all 0.5s linear; /*porque luego sera fixed*/
 }
 .nav-center {
   /*Ponemos el Nav center, siempre en el center, bigger screen too*/
@@ -150,7 +150,7 @@ p {
 .nav-btn {
   background: transparent;
   border-color: transparent;
-  color: var(--primaryColor);
+  color: var(--colorPrimare-Shade1);
   font-size: 2rem;
   cursor: pointer;
   /* Justify-content: space-between --> en FLEX */
@@ -159,7 +159,7 @@ p {
 /* Navbar for Desktop */
 @media screen and (min-width: 768px) {
   .nav {
-    background: var(--colorPrimare-Light4);
+    background: transparent;
   }
   .nav-btn {
     display: none;
@@ -199,9 +199,9 @@ p {
   top: 0;
   left: 0;
   width: 100%;
-  background: var(--offWhite);
+  background: var(--colorPrimare-Light3);
   z-index: 2;
-  box-shadow: var(--darkGrey);
+  box-shadow: 1px 0.5px 10px #747474;
 }
 /* Podemos agregar una Hero section de 150vh para comprobar */
 /* End Fixed Navbar */
@@ -282,7 +282,7 @@ p {
 
 /* Hero Section  */
 .hero {
-  background: red;
+  background: var(--offWhite);
   min-height: 500vh;
 }
 /* End Hero Section */
