@@ -19,8 +19,8 @@
   --mainBlack: #222;
   --offBlack: #011627;
   --mainWhite: #fff;
-  --offWhite: #fdfffc;
-  --darkGrey: #747474;
+  --offWhite: #f7f7ff;
+  --darkGrey: #978e8e;
   /* Others */
   --mainTransition: all 0.3s linear;
   --mainSpacing: 0.2rem;
@@ -63,9 +63,10 @@ h2 {
   margin-bottom: 0;
 }
 p {
-  font-weight: 300;
-  font-size: 0.7rem;
+  font-weight: 400;
+  font-size: 0.8rem;
   line-height: 2;
+  color: var(--darkGrey);
 }
 @media screen and (min-width: 800px) {
   h1 {
@@ -125,7 +126,7 @@ p {
   width: 5rem;
   height: 0.25rem;
   margin-bottom: 1.25rem;
-  background: var(--primaryColor);
+  background: var(--DetailCTA2);
   margin-left: auto;
   margin-right: auto;
 }
@@ -383,7 +384,7 @@ p {
 }
 .about-info p {
   font-size: 1rem;
-  color: var(--offBlack);
+  color: var(--darkGrey);
   margin-bottom: 1.5rem;
 }
 @media screen and (min-width: 992px) {
@@ -413,5 +414,62 @@ p {
 /* End About Section */
 
 /* Services Section */
+.services {
+  background: var(--offWhite);
+}
+.service {
+  background: var(--offWhite);
+  padding: 3rem 1.5rem; /*tamaño de la card*/
+  margin-bottom: 2rem;
+  border-radius: var(--borderRad);
+  text-align: center;
+  transition: var(--mainTransition);
+  box-shadow: 5px 5px 6px rgba(34, 34, 34, 0.2),
+    -5px -5px 6px rgba(255, 255, 255);
+}
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+.service .underline {
+  width: 3rem;
+  height: 0.12rem;
+  transition: var(--mainTransition);
+}
+.service p {
+  transition: var(--mainTransition);
+}
+.service:hover {
+  background: var(--primaryColor);
+  color: var(--offWhite);
+  overflow: hidden;
+  box-shadow: 5px 5px 6px rgba(34, 34, 34, 0.6),
+    -5px -5px 6px rgb(255, 255, 255, 0.5);
+}
+.service:hover p {
+  color: var(--offWhite);
+}
+.service:hover .service-icon {
+  color: var(--DetailCTA1);
+}
+.service:hover .underline {
+  background: var(--DetailCTA2);
+}
+/*si se usa un cellphone (smaller screens) que no acepta CSS GRID cagamo, conviene usar MARGINS*/
 
+@media screen and (min-width: 676px) {
+  .services-center {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .services-center {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
 /* End Services Section  */
+
+/* Projects Section  */
+/* End Projects Section */
