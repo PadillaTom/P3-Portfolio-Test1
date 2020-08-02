@@ -824,4 +824,93 @@ p {
 /* End Timeline Section  */
 
 /* Blog Section */
+.blog {
+  background: var(--offWhite);
+}
+.card {
+  height: 27rem; /*poner height, porque usaremos position absolute*/
+  position: relative;
+  perspective: 1500px; /*ya veremos que es*/
+}
+/*Usamos la Class Generica para esconder el back detras del front, PERO sigue posicionandose por debajo del FRONT, hay que arreglarlo*/
+.card-side {
+  transition: all 0.7s linear; /*sacamos la trans de front y back*/
+  backface-visibility: hidden;
+  position: absolute; /*superpone el front con el back*/
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--borderRad);
+}
+.card-front {
+  background: var(--colorPrimare-Light4);
+}
+.card-back {
+  background: var(--colorPrimare-Light4);
+  /*queremos que sea la espalda, entonces debe estar de espaldas*/
+  transform: rotateY(180deg);
+  display: grid;
+  place-items: center;
+}
+.card:hover .card-front {
+  transform: rotateY(-180deg);
+}
+.card:hover .card-back {
+  transform: rotateY(0deg);
+}
+/*rest de styles*/
+.card-front img {
+  height: 13rem;
+  object-fit: cover;
+  border-top-left-radius: var(--borderRad);
+  border-top-right-radius: var(--borderRad);
+}
+.card-footer {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+}
+.card-info {
+  padding: 1rem 1.5rem;
+}
+.card-footer img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.card-footer p {
+  margin-bottom: 0;
+  text-transform: uppercase;
+  justify-self: end;
+  color: var(--colorPrimare-Light1);
+  font-size: 0.85rem;
+}
+.blog-center {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 3rem 1rem;
+}
 /* End Blog Section */
+/* Footer Section */
+.footer {
+  padding-bottom: 2rem;
+  background: var(--offBlack);
+  display: grid;
+  place-items: center;
+}
+.footer .social-icons {
+  margin-bottom: 1.5rem;
+}
+.footer .social-icon {
+  color: var(--colorPrimare-Shade1);
+}
+.footer .social-icon:hover {
+  color: var(--colorPrimare-Light2);
+}
+.footer p {
+  font-size: 1.25rem;
+  text-transform: capitalize;
+}
+/* End Footer Section */
