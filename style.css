@@ -914,3 +914,20 @@ p {
   text-transform: capitalize;
 }
 /* End Footer Section */
+
+/*Pages*/
+.single-page {
+  background: var(--colorPrimare-Light4);
+  min-height: calc(100vh-5rem-198px);
+}
+.page-info {
+  max-width: 700px;
+}
+.page-info a {
+  text-transform: uppercase;
+  color: var(--colorPrimare-Shade2);
+  transition: var(--mainTransition);
+}
+.page-info a:hover {
+  color: var(--colorPrimare-Light2);
+}
