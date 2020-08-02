@@ -190,6 +190,7 @@ p {
     /* ayuda agregar un bg para manejar dichos items unicamente */
     /* background: red; */
     justify-items: center;
+    -moz-column-gap: 2rem;
     column-gap: 2rem;
     justify-self: end;
   }
@@ -340,6 +341,7 @@ p {
   .hero-photo {
     max-width: 25rem;
     max-height: 30rem;
+    -o-object-fit: cover;
     object-fit: cover;
     border-radius: var(--borderRad);
     position: relative; /*para meterla en el normal flow, y que el borde aparezca por debajo*/
@@ -365,6 +367,7 @@ p {
 .hero-photo {
   max-width: 25rem;
   max-height: 30rem;
+  -o-object-fit: cover;
   object-fit: cover;
   border-radius: var(--borderRad);
   position: relative; /*para meterla en el normal flow, y que el borde aparezca por debajo*/
@@ -472,6 +475,7 @@ p {
   .services-center {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    -moz-column-gap: 2rem;
     column-gap: 2rem;
   }
 }
@@ -515,6 +519,7 @@ p {
   transition: var(--mainTransition);
   border-radius: var(--borderRad);
   height: 15rem;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 .project:hover .project-img {
@@ -544,6 +549,7 @@ p {
   .projects-center {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    -moz-column-gap: 2rem;
     column-gap: 2rem;
   }
 }
@@ -598,6 +604,7 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
   z-index: -2; /*Para poder ver texto*/
 }
@@ -628,6 +635,15 @@ p {
   padding: 3rem 5rem 12rem 5rem;
   text-align: center;
   border-radius: var(--borderRad);
+  -webkit-clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 75%,
+    75% 75%,
+    75% 100%,
+    50% 75%,
+    0% 75%
+  );
   clip-path: polygon(
     0% 0%,
     100% 0%,
@@ -640,6 +656,16 @@ p {
   transform: scale(0.75);
 }
 .connect {
+  -webkit-clip-path: polygon(
+    30% 0%,
+    70% 0%,
+    100% 5%,
+    100% 95%,
+    70% 100%,
+    30% 100%,
+    0 95%,
+    0 5%
+  );
   clip-path: polygon(
     30% 0%,
     70% 0%,
@@ -658,6 +684,7 @@ p {
   .skills-center {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    -moz-column-gap: 2rem;
     column-gap: 2rem;
   }
 }
@@ -835,6 +862,7 @@ p {
 /*Usamos la Class Generica para esconder el back detras del front, PERO sigue posicionandose por debajo del FRONT, hay que arreglarlo*/
 .card-side {
   transition: all 0.7s linear; /*sacamos la trans de front y back*/
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   position: absolute; /*superpone el front con el back*/
   top: 0;
@@ -842,6 +870,8 @@ p {
   width: 100%;
   height: 100%;
   border-radius: var(--borderRad);
+  -webkit-transform: translate3d(0, 0, 0);
+  visibility: visible;
 }
 .card-front {
   background: var(--colorPrimare-Light4);
@@ -862,6 +892,7 @@ p {
 /*rest de styles*/
 .card-front img {
   height: 13rem;
+  -o-object-fit: cover;
   object-fit: cover;
   border-top-left-radius: var(--borderRad);
   border-top-right-radius: var(--borderRad);
@@ -877,6 +908,7 @@ p {
 .card-footer img {
   width: 2rem;
   height: 2rem;
+  -o-object-fit: cover;
   object-fit: cover;
   border-radius: 50%;
 }
@@ -930,4 +962,71 @@ p {
 }
 .page-info a:hover {
   color: var(--colorPrimare-Light2);
+}
+/*Projects Page*/
+/*titulo*/
+.projects-hero {
+  height: 40vh;
+  background: var(--colorPrimare-Light4);
+  display: grid;
+  place-items: center;
+}
+.projects-hero .section-title {
+  margin-bottom: 0;
+}
+/*end titulo*/
+/*single project*/
+.single-project {
+  background: var(--colorPrimare-Light4);
+  border-radius: var(--borderRad);
+}
+.project-container img {
+  border-top-left-radius: var(--borderRad);
+  border-top-right-radius: var(--borderRad);
+}
+.project-container {
+  position: relative;
+}
+.project-icon {
+  position: absolute;
+  font-size: 1.75rem;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: 4rem;
+  height: 4rem;
+  display: grid;
+  place-items: center;
+  background: var(--colorPrimare-Light2);
+  border-radius: 50%;
+  color: var(--colorPrimare-Shade3);
+  border: 0.375rem solid var(--colorPrimare-Light4);
+}
+.project-details {
+  padding: 2rem 2rem;
+}
+.project-details p {
+  margin-bottom: 1rem;
+}
+.project-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: var(--primaryColor);
+}
+.project-footer a {
+  justify-self: end;
+  color: var(--colorPrimare-Shade4);
+  text-transform: capitalize;
+  transition: var(--mainTransition);
+}
+.project-footer a:hover {
+  color: var(--colorPrimare-Shade2);
+}
+.project-footer i {
+  font-size: 2rem;
+}
+.projects-page-center {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 3rem 1rem;
 }
