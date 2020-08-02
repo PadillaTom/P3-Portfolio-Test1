@@ -754,3 +754,74 @@ p {
   left: 100%;
 }
 /* End Skills Section */
+
+/* Timeline Section   */
+.timeline-center {
+  width: 80%;
+  max-width: 40rem;
+}
+.timeline-item {
+  border-top: 2px dashed var(--colorPrimare-Light2);
+  margin: 0;
+  padding: 4rem 2rem;
+  position: relative; /*for the numbers*/
+}
+.time-line p {
+  margin-bottom: 0;
+}
+/* Linea Punteada  :NTH-CHILD() puedo afectar a muchos CHILD de una sola vez, Even-Odd o especificar su numero*/
+.timeline-item:nth-child(even) {
+  /* background: red; Ejemplo para ver su funcionamiento */
+  border-left: 2px dashed var(--colorPrimare-Light2);
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem; /*Aqui vemos que no termina de completar todo el borde, sigue una linea por debajo*/
+  /*Solucion: Darle un margen a la linea vertical para acercarla al elemento y poder doblarla sin que se extienda de mas*/
+  margin-right: 1.7rem;
+  padding-right: 0;
+}
+.timeline-item:nth-child(odd) {
+  /* background: red; Ejemplo para ver su funcionamiento */
+  border-right: 2px dashed var(--colorPrimare-Light2);
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  margin-left: 2.2rem;
+  padding-left: 0;
+}
+.timeline-item:first-child {
+  /*queremos sacarle al top y bot la linea doblada y puntada al top*/
+  border-top: 0;
+  border-top-right-radius: 0;
+}
+.timeline-item:last-child {
+  border-bottom-left-radius: 0;
+}
+/*Terminamos Linea Punteada*/
+/*Numeros*/
+.number {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin-bottom: 0;
+  background: var(--primaryColor);
+  /*usamos widht y height para crear elementos redondos*/
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  /*Con esto centramos los numeros en el bojeto*/
+  display: grid;
+  place-items: center;
+  color: var(--colorPrimare-Shade2);
+  font-weight: bold;
+}
+.timeline-item:nth-child(even) .number {
+  left: 0;
+}
+.timeline-item:nth-child(odd) .number {
+  right: 0;
+  /*no llegan a la linea punteada, porque usamos TRANSLATE*/
+  transform: translate(50%, -50%);
+}
+/* End Timeline Section  */
+
+/* Blog Section */
+/* End Blog Section */
